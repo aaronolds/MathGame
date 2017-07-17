@@ -1,14 +1,17 @@
 var express = require('express');
 var app = express();
-var addgame = require('./modules/addgame');
+var addGame = require('./src/controllers/addGameController');
  
-app.get('/', function (req, res) {
-  res.send('Hello World')
-});
- 
+app.use(express.static('public'));
+app.use(express.static('src/views'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded());
+// app.use(cookieParser());
+// app.use(session({secret: 'library'}));
+
 
 app.get('/newgame/add/:level', function(req, res){
-    addgame.newGame(req, res);
+    addGame.newGame(req, res);
 });
 
 app.get('/newgame/subtract/:level', function(req, res){
@@ -24,4 +27,4 @@ app.get('/newgame/divide/:level', function(req, res){
 });
 
 
-app.listen(3000)
+app.listen(3001)
