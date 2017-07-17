@@ -23,5 +23,6 @@ Dependencies:
 Download the source, navigate to the source directory of the project and run the following commands:
 ```
 npm install 
+npm start
 ```
 This will download and restore all required npm packages for the project 
