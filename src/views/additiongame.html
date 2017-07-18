@@ -11,31 +11,51 @@
 <body>
     <div class="container-fluid">
         <h1 style="font-family:'Playfair Display', serif;"><i class="fa fa-truck"></i>addition game</h1>
-        
-        <p id="question1"><input type="text" id="answer1" value=""></p>
-        <p id="question2"><input type="text" id="answer2" value=""></p>
+
+        <!-- <p id="question1"><input type="text" id="answer1" value=""></p> -->
+        <form >
+            <p id="question1"> <input id="answer1" type="number" name="Answer1"></p>
+            <p id="question2"> <input id="answer2" type="number" name="Answer2"></p>
+            <p id="question4"> <input id="answer3" type="number" name="Answer3"></p>
+            <p id="question5"> <input id="answer4" type="number" name="Answer4"></p>
+            <p id="question3"> <input id="answer5" type="number" name="Answer5"></p>
+            <p id="question6"> <input id="answer6" type="number" name="Answer6"></p>
+            <p id="question7"> <input id="answer7" type="number" name="Answer7"></p>
+            <p id="question8"> <input id="answer8" type="number" name="Answer8"></p>
+            <p id="question9"> <input id="answer9" type="number" name="Answer9"></p>
+            <p id="question10"> <input id="answer10" type="number" name="Answer10"></p>
+            <input type="submit" value="Check Answers">
+        </form>
 
     </div>
 
-    <button id="btn1">Set Text</button>
-    <button id="btn2">Set HTML</button>
-    <button id="btn3">Set Value</button>
     <script src="/lib/jquery.min.js"></script>
     <script src="/lib/bootstrap.min.js"></script>
 
     <script>
-    $(document).ready(function(){
-        $("#btn1").click(function(){
-            $("#question1").append("1 + 1 =");
+        $(document).ready(function () {
+                $("#question1").prepend("1 + 0 =");
+                $("#question2").prepend("1 + 1 =");
+                $("#question3").prepend("1 + 2 =");
+                $("#question4").prepend("1 + 3 =");
+                $("#question5").prepend("1 + 4 =");
+                $("#question6").prepend("1 + 5 =");
+                $("#question7").prepend("1 + 6 =");
+                $("#question8").prepend("1 + 7 =");
+                $("#question9").prepend("1 + 8 =");
+                $("#question10").prepend("1 + 9 =");
+                $("#answer1").focus();
         });
-        $("#btn2").click(function(){
-            $("#question2").append("1 + 2 =");
+
+        $("form").submit(function(){
+            var answer1 = $('#answer1').val()
+            alert(answer1);
         });
-    // $("#btn3").click(function(){
-    //     $("#test3").val("Dolly Duck");
-    // });
-    });
-</script>
+        
+        //  $("form").submit(function(){
+        //     alert($("answer1").val());
+        // });
+    </script>
     <!-- <script type="text/javascript" src="/js/main.js"></script> -->
 </body>
 
