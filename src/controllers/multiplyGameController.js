@@ -5,8 +5,8 @@ exports.newGame = function (req, res) {
     var arrayOfObjects = [];
     for (var i = 0; i < 11; i++) {
         var obj = {
-            q: `${req.params.level} + ${i}`,
-            a: i + parseInt(req.params.level)
+            q: `${req.params.level} * ${i}`,
+            a: i * parseInt(req.params.level)
         };
         arrayOfObjects.push(obj);
     }

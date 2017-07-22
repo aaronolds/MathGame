@@ -1,16 +1,30 @@
 $(function () {
     $(document).ready(function () {
-        $("#question0").prepend("1 + 0 =");
-        $("#question1").prepend("1 + 1 =");
-        $("#question2").prepend("1 + 2 =");
-        $("#question3").prepend("1 + 3 =");
-        $("#question4").prepend("1 + 4 =");
-        $("#question5").prepend("1 + 5 =");
-        $("#question6").prepend("1 + 6 =");
-        $("#question7").prepend("1 + 7 =");
-        $("#question8").prepend("1 + 8 =");
-        $("#question9").prepend("1 + 9 =");
-        $("#question10").prepend("1 + 10 =");
+
+        $.ajax({
+            url: "http://localhost:3001/newgame/add/1"
+        }).then(function (data) {
+            var questionList = data;
+
+            questionList.forEach(function (question, i) {
+                for (var key in question) {
+                    var questionStr = `#question${i}`;
+                    console.log(i, key, question[key], questionStr);
+                    $(questionStr).prepend(question[key]);
+                }
+            });
+        });
+        // $("#question0").prepend("1 + 0 =");
+        // $("#question1").prepend("1 + 1 =");
+        // $("#question2").prepend("1 + 2 =");
+        // $("#question3").prepend("1 + 3 =");
+        // $("#question4").prepend("1 + 4 =");
+        // $("#question5").prepend("1 + 5 =");
+        // $("#question6").prepend("1 + 6 =");
+        // $("#question7").prepend("1 + 7 =");
+        // $("#question8").prepend("1 + 8 =");
+        // $("#question9").prepend("1 + 9 =");
+        // $("#question10").prepend("1 + 10 =");
         $("#answer0").focus();
     });
 
