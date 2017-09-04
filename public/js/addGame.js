@@ -1,15 +1,28 @@
 $(function () {
+    var questionList;
     $(document).ready(function () {
-
         $.ajax({
             url: "http://localhost:3001/newgame/add/1"
         }).then(function (data) {
             var questionList = data;
+<<<<<<< HEAD
 
             Object.keys(questionList).forEach(function (key, index) {
                 var questionStr = `#question${index}`;
                 $(questionStr).prepend(questionList[key].q);
             });
+=======
+            Object.entries(questionList).forEach(
+                ([key, value]) => {
+                    console.log(key, value)
+                    var questionStr = `#question${key}`;
+                    console.log(questionStr);
+                    console.log(value.q)
+                    console.log(value.a)
+                    $(questionStr).text(value.q);
+                }
+            );
+>>>>>>> bb8d24bbf229eba4254f9b2fe8513717daa2aebe
         });
         $("#answer0").focus();
     });
@@ -20,66 +33,66 @@ $(function () {
 
         if ($('#answer0').val() != 1) {
             errors = true;
-            $("#question0").append("  Incorrect");
+            $("#result0").text("  Incorrect");
         }
 
-        if ($('#answer1').val() != 2) {
-            errors = true;
-            $("#question1").append("  Incorrect");
-        }
+        // if ($('#answer1').val() != 2) {
+        //     errors = true;
+        //     $("#question1").append("  Incorrect");
+        // }
 
-        if ($('#answer2').val() != 3) {
-            errors = true;
-            $('#question2').append("  Incorrect");
-        }
+        // if ($('#answer2').val() != 3) {
+        //     errors = true;
+        //     $('#question2').append("  Incorrect");
+        // }
 
-        // validate answer3
-        if ($('#answer3').val() != 4) {
-            errors = true;
-            $('#question3').append("  Incorrect");
-        }
+        // // validate answer3
+        // if ($('#answer3').val() != 4) {
+        //     errors = true;
+        //     $('#question3').append("  Incorrect");
+        // }
 
-        // validate answer4
-        if ($('#answer4').val() != 5) {
-            errors = true;
-            $('#question4').append("  Incorrect");
-        }
+        // // validate answer4
+        // if ($('#answer4').val() != 5) {
+        //     errors = true;
+        //     $('#question4').append("  Incorrect");
+        // }
 
-        // validate answer5
-        if ($('#answer5').val() != 6) {
-            errors = true;
-            $('#question5').append("  Incorrect");
-        }
+        // // validate answer5
+        // if ($('#answer5').val() != 6) {
+        //     errors = true;
+        //     $('#question5').append("  Incorrect");
+        // }
 
-        // validate answer6
-        if ($('#answer6').val() != 7) {
-            errors = true;
-            $('#question6').append("  Incorrect");
-        }
+        // // validate answer6
+        // if ($('#answer6').val() != 7) {
+        //     errors = true;
+        //     $('#question6').append("  Incorrect");
+        // }
 
-        // validate answer7
-        if ($('#answer7').val() != 8) {
-            errors = true;
-            $('#question7').append("  Incorrect");
-        }
+        // // validate answer7
+        // if ($('#answer7').val() != 8) {
+        //     errors = true;
+        //     $('#question7').append("  Incorrect");
+        // }
 
-        // validate answer8
-        if ($('#answer8').val() != 9) {
-            errors = true;
-            $('#question8').append("  Incorrect");
-        }
+        // // validate answer8
+        // if ($('#answer8').val() != 9) {
+        //     errors = true;
+        //     $('#question8').append("  Incorrect");
+        // }
 
-        // validate answer9
-        if ($('#answer8').val() != 9) {
-            errors = true;
-            $('#question9').append("  Incorrect");
-        }
+        // // validate answer9
+        // if ($('#answer8').val() != 9) {
+        //     errors = true;
+        //     $('#question9').append("  Incorrect");
+        // }
 
-        // validate answer10
-        if ($('#answer10').val() != 11) {
-            errors = true;
-            $('#question10').append("  Incorrect");
-        }
+        // // validate answer10
+        // if ($('#answer10').val() != 11) {
+        //     errors = true;
+        //     $('#question10').append("  Incorrect");
+        // }
 
 
 
