@@ -4,7 +4,8 @@
   "description": "tyler olds' math game",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "MIT",
@@ -13,7 +14,7 @@
     "express": "^4.15.3",
     "jquery": "^3.2.1"
   },
-  "devDependencies": {
-    "webpack": "^3.3.0"
+  "engines": {
+    "node": ">=6.9.1"
   }
 }
