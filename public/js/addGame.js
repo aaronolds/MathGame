@@ -5,13 +5,6 @@ $(function () {
             url: "http://localhost:3001/newgame/add/1"
         }).then(function (data) {
             var questionList = data;
-<<<<<<< HEAD
-
-            Object.keys(questionList).forEach(function (key, index) {
-                var questionStr = `#question${index}`;
-                $(questionStr).prepend(questionList[key].q);
-            });
-=======
             Object.entries(questionList).forEach(
                 ([key, value]) => {
                     console.log(key, value)
@@ -22,7 +15,6 @@ $(function () {
                     $(questionStr).text(value.q);
                 }
             );
->>>>>>> bb8d24bbf229eba4254f9b2fe8513717daa2aebe
         });
         $("#answer0").focus();
     });
