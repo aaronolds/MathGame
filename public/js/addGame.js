@@ -2,7 +2,7 @@ $(function () {
     var questionList;
     $(document).ready(function () {
         $.ajax({
-            url: "http://localhost:3001/newgame/add/1"
+            url: "/newgame/add/1"
         }).then(function (data) {
             var questionList = data;
             Object.entries(questionList).forEach(
