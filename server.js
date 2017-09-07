@@ -32,5 +32,9 @@ app.get('/newgame/divide/:level', function(req, res){
 });
 
 
-app.listen(3001)
+// app.listen(3001)
+// finally, let's start our server...
+var server = app.listen( process.env.PORT || 3001, function(){
+    console.log('Listening on port ' + server.address().port);
+  });
 // module.exports = app;
